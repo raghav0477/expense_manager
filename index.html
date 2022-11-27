@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Expenses Management</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <img src="./assests/bank.png" alt="logo-image" />
+        <div class="nav-links">
+          <a href="">Home</a>
+          <a href="">More</a>
+          <a href="">Settings</a>
+        </div>
+      </div>
+      <div class="nav-right">
+        <div class="profile">
+          <a href="#"><img src="./assests/user.png" alt=""></a>
+        </div>
+      </div>
+    </nav>
+    <div class="hero container">
+      <div class="salutation">Welcome back, User!</div>
+      <div class="hero-ctn">
+        <div class="hero-left">
+          <div class="display-box">
+            <div class="top-head">Total Balance</div>
+            <div class="balance">500.00</div>
+            <div class="acc-num">Acc Number: **** 1234</div>
+          </div>
+          <div class="display-box">
+            <div class="top-head">Transaction</div>
+            <button onclick="showDeposit()">Deposit</button>
+            <button onclick="showWithdraw()">Withdraw</button>
+
+            <div class="withdraw-box">
+              <h1>Withdrawals</h1>
+              <label for="">Withdraw the Money</label>
+              <input
+                placeholder="Enter the amount to withdraw"
+                class="input_withdraw"
+                type="text"
+                name="text"
+              />
+              <button class="btn_withdraw">Withdraw</button>
+            </div>
+
+            <div class="deposit-box">
+              <h1>Deposit</h1>
+              <label for="">Deposit the Money</label>
+              <input
+                placeholder="Enter the amount to deposit"
+                type="text"
+                name="text"
+                class="input_deposit"
+              />
+              <button class="btn_deposit">Deposit</button>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="transaction display-box">
+            <h1 class="top-head">Recent History</h1>
+            <div class="transaction__row">
+              <!-- <div class="transaction__type transaction__type--deposit">2 deposit</div> -->
+              <div class="transaction__date">3 days ago</div>
+              <div class="transaction__value">4000₹</div>
+            </div>
+            <div class="transaction__row">
+              <!-- <div class="transaction__type transaction__type--withdrawal">
+                    1 withdrawal
+                  </div> -->
+              <div class="transaction__date">24/01/2037</div>
+              <div class="transaction__value">-378₹</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+:root{
+  --text-main:#001824;
+  --secondary:#002657;
+}
+.container {
+  width: 1400px;
+  margin: 0 auto;
+}
+nav {
+  background-color: cornflowerblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+}
+a {
+  list-style: none;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: 20px;
+  color: #ffffff;
+  transition: all .3s ease-in-out;
+}
+a:hover{
+  transform: scale(1.1); 
+  -webkit-transform: scale(1.1);
+  font-size: 22px;
+}
+img{
+  transition: all .4s ease-in-out;
+}
+img:hover{
+  transform: scale(1.1); 
+  -webkit-transform: scale(1.2);
+}
+.nav-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;  
+}
+
+form {
+  width: 250px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+input {
+  all: unset;
+  font: 16px system-ui;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+}
+.salutation {
+  font-size: 50px;
+  font-weight: 600;
+  margin: 3rem;
+  border-bottom: 1px solid gray;
+  color: var(--secondary);
+}
+.hero-ctn {
+  display: flex;
+  flex-direction: row;
+}
+.hero-left {
+  flex-grow: 1;
+}
+.hero-right {
+  flex-grow: 3;
+}
+.display-box {
+  width: 80%;
+  border-radius: 21px;
+  background: #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  padding: 2rem 2rem;
+  margin: 2rem;
+}
+
+.top-head {
+  opacity: 70%;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  color: var(--secondary);
+}
+.balance {
+  font-size: 38px;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 50px;
+}
+input {
+  width: 80%;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  color: black;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+.deposit-box,.withdraw-box{
+  display: none;
+}
+
+
+input:active {
+  transform: scale(0.95);
+}
+
+input:focus {
+  border: 2px solid grey;
+}
+
+.transaction__row {
+  padding: 2.25rem 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.transaction__type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+
+.transaction__date {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+
+.transaction__value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid #5a72cb;
+  border-radius: 5px;
+  color: #3b3b3b;
+  cursor: pointer;
+  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  outline: none;
+  margin-top: 0.5rem;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+button:hover {
+  color: rgb(236, 228, 228);
+  background-color: #04447b;
+  box-shadow: rgba(3, 108, 255, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
