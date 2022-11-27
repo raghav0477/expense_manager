@@ -63,9 +63,9 @@ input {
   padding: 6px 10px;
 }
 .salutation {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 600;
-  margin: 3rem;
+  margin: 2.5rem;
   border-bottom: 1px solid gray;
   color: var(--secondary);
 }
@@ -134,31 +134,30 @@ input:focus {
   border: 2px solid grey;
 }
 
-.transaction__row {
-  padding: 2.25rem 4rem;
+.transaction_row {
+  padding: 1.8rem 2.5rem;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #eee;
 }
 
-.transaction__type {
+.transaction_type {
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--text-main);
   padding: 0.1rem 1rem;
   border-radius: 10rem;
   margin-right: 2rem;
 }
 
-.transaction__date {
+.transaction_date {
   font-size: 1.1rem;
   text-transform: uppercase;
   font-weight: 500;
   color: #666;
 }
 
-.transaction__value {
+.transaction_value {
   font-size: 1.7rem;
   margin-left: auto;
 }
@@ -216,7 +215,7 @@ button:active {
     width: 100%;
     margin: 1rem;
   }
-  .transaction__row{
+  .transaction_row{
     padding: 1rem;
   }
   .hero-left {
@@ -225,14 +224,14 @@ button:active {
   .hero-right {
     flex-grow: 0;
   }
-  .transaction__type{
+  .transaction_type{
     font-size: 20px;
     padding: 0;
   }
-  .transaction__row{
+  .transaction_row{
     padding: 1rem 1.1rem;
   }
-  .transaction__value{
+  .transaction_value{
     font-size: 18px;
   }
   button{
