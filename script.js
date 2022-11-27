@@ -8,7 +8,6 @@ const trxn_box = document.querySelector(".transaction");
 const balance_text = document.querySelector(".balance");
 const expenses = [300, 500];
 const calcDisplayBalance = function (acc) {
-  // balance = expenses.push(inputDeposit.value);
   balance = expenses.reduce((acc, mov) => acc + mov, 0);
   balance_text.textContent = `₹ ${balance} `;
   return balance;
@@ -25,7 +24,7 @@ btnDeposit.addEventListener("click", function (eve) {
   const html = `
       <div class="transaction__row">
       <div class="transaction__type" style="color:green;">Deposit</div>
-        <div class="transaction__value">${Number(inputDeposit.value)}€</div>
+        <div class="transaction__value">${Number(inputDeposit.value)}₹</div>
       </div>
     `;
   trxn_box.insertAdjacentHTML("beforeend", html);
@@ -40,7 +39,7 @@ btnWithdraw.addEventListener("click", function (eve) {
   const html = `
   <div class="transaction__row">
   <div class="transaction__type" style="color:red;">Withdrawal</div>
-    <div class="transaction__value">-${Number(inputWithdraw.value)}€</div>
+    <div class="transaction__value">-${Number(inputWithdraw.value)}₹</div>
   </div>
 `;
   trxn_box.insertAdjacentHTML("beforeend", html);
