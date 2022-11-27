@@ -22,9 +22,9 @@ btnDeposit.addEventListener("click", function (eve) {
   console.log(balance);
   balance_text.textContent = `₹ ${balance}`;
   const html = `
-      <div class="transaction__row">
-      <div class="transaction__type" style="color:green;">Deposit</div>
-        <div class="transaction__value">${Number(inputDeposit.value)}₹</div>
+      <div class="transaction_row">
+      <div class="transaction_type" style="color:green;">Deposit</div>
+        <div class="transaction_value">${Number(inputDeposit.value)}₹</div>
       </div>
     `;
   trxn_box.insertAdjacentHTML("beforeend", html);
@@ -37,9 +37,9 @@ btnWithdraw.addEventListener("click", function (eve) {
   console.log(withdrew);
   balance_text.textContent = `₹ ${withdrew} `;
   const html = `
-  <div class="transaction__row">
-  <div class="transaction__type" style="color:red;">Withdrawal</div>
-    <div class="transaction__value">-${Number(inputWithdraw.value)}₹</div>
+  <div class="transaction_row">
+  <div class="transaction_type" style="color:red;">Withdrawal</div>
+    <div class="transaction_value">-${Number(inputWithdraw.value)}₹</div>
   </div>
 `;
   trxn_box.insertAdjacentHTML("beforeend", html);
