@@ -21,7 +21,6 @@ nav {
   height: 100px;
 }
 a {
-  list-style: none;
   text-decoration: none;
   margin-left: 1rem;
   font-size: 20px;
@@ -56,7 +55,7 @@ form {
 }
 input {
   all: unset;
-  font: 16px system-ui;
+  font: 16px;
   color: #fff;
   height: 100%;
   width: 100%;
@@ -217,12 +216,6 @@ button:active {
   }
   .transaction_row{
     padding: 1rem;
-  }
-  .hero-left {
-    flex-grow: 0;
-  }
-  .hero-right {
-    flex-grow: 0;
   }
   .transaction_type{
     font-size: 20px;
