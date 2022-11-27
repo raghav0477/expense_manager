@@ -7,7 +7,6 @@ const btnDeposit = document.querySelector(".btn_deposit");
 const trxn_box = document.querySelector(".transaction");
 const balance_text = document.querySelector(".balance");
 const expenses = [300, 500];
-
 const calcDisplayBalance = function (acc) {
   // balance = expenses.push(inputDeposit.value);
   balance = expenses.reduce((acc, mov) => acc + mov, 0);
@@ -25,27 +24,26 @@ btnDeposit.addEventListener("click", function (eve) {
   balance_text.textContent = `₹ ${balance}`;
   const html = `
       <div class="transaction__row">
+      <div class="transaction__type" style="color:green;">Deposit</div>
         <div class="transaction__value">${Number(inputDeposit.value)}€</div>
       </div>
     `;
   trxn_box.insertAdjacentHTML("beforeend", html);
-  // console.log(inputDeposit.value)
   inputDeposit.value = "";
 });
 btnWithdraw.addEventListener("click", function (eve) {
   eve.preventDefault();
-  // withdrew = expenses.reduce((acc, mov) => acc + mov, 0);
   withdrew = balance - Number(inputWithdraw.value);
   balance = withdrew;
   console.log(withdrew);
   balance_text.textContent = `₹ ${withdrew} `;
   const html = `
   <div class="transaction__row">
+  <div class="transaction__type" style="color:red;">Withdrawal</div>
     <div class="transaction__value">-${Number(inputWithdraw.value)}€</div>
   </div>
 `;
   trxn_box.insertAdjacentHTML("beforeend", html);
-  // console.log(inputDeposit.value)
   inputWithdraw.value = "";
 });
 
