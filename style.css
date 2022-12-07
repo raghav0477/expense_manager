@@ -62,7 +62,7 @@ img:hover{
   flex-grow: 3;
 }
 .display-box {
-  width: 80%;
+  width: 35vw;
   border-radius: 21px;
   background: #ffffff;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
@@ -70,7 +70,7 @@ img:hover{
   margin: 2rem;
 }
 .transaction_box{
-  width: 80%;
+  width: 40vw;
   border-radius: 21px;
   background: #ffffff;
   box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
@@ -165,7 +165,7 @@ button:hover {
   transform: translateY(-2px);
 }
 
-@media (900px <= width< 1300px) {
+@media only screen and (max-width: 1300px) and (min-width: 900px) {
   .container{
     width: 80%;
   }
@@ -178,7 +178,7 @@ button:hover {
   }
   .transaction_box{
     margin: 1rem;
-    width: 90%;
+    width: 50vw;
   }
   .transaction_row{
     padding: 1.5rem 1.5rem 2rem 0;
@@ -187,12 +187,9 @@ button:hover {
     margin-top: 2rem;
     border-top: 1px solid var(--secondary);
   }
-  .transaction_box{
-    width: 100%;
-   
-  }
+
 }
-@media (300px <= width <= 900px) {
+@media only screen and (max-width: 900px) and (min-width: 300px) {
   .container{
     width: 70%;
   }
