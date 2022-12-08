@@ -4,12 +4,12 @@ const withdraw_box = document.querySelector(".withdraw-box");
 const btnWithdraw = document.querySelector(".btn_withdraw");
 const deposit_box = document.querySelector(".deposit-box");
 const btnDeposit = document.querySelector(".btn_deposit");
-const trxn_box = document.querySelector(".transaction");
+const trxn_box = document.querySelector(".transaction_box");
 const balance_text = document.querySelector(".balance");
 const expenses = [300, 500];
 const calcDisplayBalance = function (acc) {
   balance = expenses.reduce((acc, mov) => acc + mov, 0);
-  balance_text.textContent = `₹ ${balance} `;
+  balance_text.textContent = `₹ ${balance}`;
   return balance;
 };
 calcDisplayBalance();
@@ -36,6 +36,10 @@ btnWithdraw.addEventListener("click", function (eve) {
   balance = withdrew;
   console.log(withdrew);
   balance_text.textContent = `₹ ${withdrew} `;
+  if (withdrew <= 0) {
+    balance_text.textContent = `₹ u broke `;
+    // alert("Check your expenditures")
+  }
   const html = `
   <div class="transaction_row">
   <div class="transaction_type" style="color:red;">Withdrawal</div>
@@ -45,6 +49,11 @@ btnWithdraw.addEventListener("click", function (eve) {
   trxn_box.insertAdjacentHTML("beforeend", html);
   inputWithdraw.value = "";
 });
+// var form = document.querySelector(".deposit-bos");
+// form.reset();
+if (balance.value <= 0) {
+  balance_text.textContent = `U broke peasent`;
+}
 
 function showDeposit() {
   if (deposit_box.style.display === "none") {
