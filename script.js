@@ -21,24 +21,34 @@ btnDeposit.addEventListener("click", function (eve) {
   balance = expenses.reduce((acc, mov) => acc + mov, 0);
   console.log(balance);
   balance_text.textContent = `₹ ${balance}`;
+  if(inputDeposit.value <= 0){
+    alert("Please enter a proper value");
+  }
+  
   const html = `
       <div class="transaction_row">
       <div class="transaction_type" style="color:green;">Deposit</div>
         <div class="transaction_value">${Number(inputDeposit.value)}₹</div>
       </div>
     `;
-  trxn_box.insertAdjacentHTML("beforeend", html);
+    if(inputDeposit.value > 0){
+     
+      trxn_box.insertAdjacentHTML("beforeend", html);
+    }
   inputDeposit.value = "";
 });
 btnWithdraw.addEventListener("click", function (eve) {
   eve.preventDefault();
+  if(inputWithdraw.value <= 0){
+    alert("Invalid Entry");
+  }
   withdrew = balance - Number(inputWithdraw.value);
   balance = withdrew;
   console.log(withdrew);
   balance_text.textContent = `₹ ${withdrew} `;
   if (withdrew <= 0) {
-    balance_text.textContent = `₹ u broke `;
-    // alert("Check your expenditures")
+    // balance_text.textContent = `₹ u broke `;
+    alert("Check your expenditures")
   }
   const html = `
   <div class="transaction_row">
@@ -46,14 +56,13 @@ btnWithdraw.addEventListener("click", function (eve) {
     <div class="transaction_value">-${Number(inputWithdraw.value)}₹</div>
   </div>
 `;
+if(inputWithdraw.value > 0 && withdrew>0){
   trxn_box.insertAdjacentHTML("beforeend", html);
+}
   inputWithdraw.value = "";
 });
 // var form = document.querySelector(".deposit-bos");
 // form.reset();
-if (balance.value <= 0) {
-  balance_text.textContent = `U broke peasent`;
-}
 
 function showDeposit() {
   if (deposit_box.style.display === "none") {
