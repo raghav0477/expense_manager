@@ -15,21 +15,10 @@
 nav {
   background-color: cornflowerblue;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 100px;
-}
-a {
-  text-decoration: none;
-  margin-left: 1rem;
-  font-size: 20px;
-  color: #ffffff;
 }
 .nav-left {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   width: 50%;
 }
 .salutation {
@@ -115,7 +104,6 @@ label {
 .transaction_type {
   font-size: 1rem;
   text-transform: uppercase;
-  font-weight: 500;
   padding: 0.1rem 1rem;
   margin-right: 2rem;
 }

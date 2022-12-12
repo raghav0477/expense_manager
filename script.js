@@ -14,29 +14,32 @@ const calcDisplayBalance = function (acc) {
 };
 calcDisplayBalance();
 
-const dep = function(){
-  if(inputDeposit.value > 0){
-  expenses.push(Number(inputDeposit.value));
-  console.log("from inside the matrix",expenses);
-  balance = expenses.reduce((acc, mov) => acc + mov, 0);
-  console.log(balance);
+const dep = function () {
+  if (inputDeposit.value > 0) {
+    expenses.push(Number(inputDeposit.value));
+    // console.log("from inside the matrix", expenses);
+    balance = expenses.reduce((acc, mov) => acc + mov, 0);
+    console.log(balance);
   }
-  if(inputDeposit.value < 0){
+  if (inputDeposit.value < 0) {
     alert("Invalid Input");
   }
-}
+};
 
-const wid = function(){
-  if(inputWithdraw.value > 0){
+const wid = function () {
+  if (inputWithdraw.value > 0 && inputWithdraw.value <= balance) {
     expenses.push(Number(-inputWithdraw.value));
-  console.log("from inside the matrix",expenses);
-  balance = expenses.reduce((acc, mov) => acc + mov, 0);
-  console.log(balance);
-    // withdrew = balance - Number(inputWithdraw.value);
-    // console.log("form inside the matrix",withdrew)
+    // console.log("from inside the matrix", expenses);
+    balance = expenses.reduce((acc, mov) => acc + mov, 0);
+    console.log(balance);
   }
-}
-
+  if (inputWithdraw.value > balance) {
+        alert("Check your expenditures")
+      }
+  if (inputWithdraw.value < 0) {
+    alert("Invalid Input");
+  }
+};
 
 btnDeposit.addEventListener("click", function (eve) {
   eve.preventDefault();
@@ -48,36 +51,29 @@ btnDeposit.addEventListener("click", function (eve) {
           <div class="transaction_value">${Number(inputDeposit.value)}₹</div>
         </div>
       `;
-      trxn_box.insertAdjacentHTML("beforeend", html);
-      if(inputDeposit.value > 0){
-  
-      }
+  trxn_box.insertAdjacentHTML("beforeend", html);
+  if (inputDeposit.value > 0) {
+  }
 
   inputDeposit.value = " ";
 });
 
-
 btnWithdraw.addEventListener("click", function (eve) {
   eve.preventDefault();
-  // console.log(expenses)
-  // if (inputWithdraw.value <= balance) {
-  //   withdrew = balance - Number(inputWithdraw.value);
-  // }
-  // console.log("this", withdrew);
-  // console.log(balance);
   wid();
   balance_text.textContent = `₹ ${balance}`;
+  if(inputWithdraw.value<=balance){
     const html = `
   <div class="transaction_row">
   <div class="transaction_type" style="color:red;">Withdrawal</div>
     <div class="transaction_value">-${Number(inputWithdraw.value)}₹</div>
   </div>
 `;
+trxn_box.insertAdjacentHTML("beforeend", html);
+  }
 
-if(inputWithdraw.value > 0 && withdrew>=0){
-  trxn_box.insertAdjacentHTML("beforeend", html);
-}
-  inputWithdraw.value = "";
+  // if(inputWithdraw.value > 0 && withdrew>=0){
+  // }
   inputWithdraw.value = " ";
 });
 
