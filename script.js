@@ -34,8 +34,8 @@ const wid = function () {
     console.log(balance);
   }
   if (inputWithdraw.value > balance) {
-        alert("Check your expenditures")
-      }
+    alert("Check your expenditures");
+  }
   if (inputWithdraw.value < 0) {
     alert("Invalid Input");
   }
@@ -45,16 +45,18 @@ btnDeposit.addEventListener("click", function (eve) {
   eve.preventDefault();
   dep();
   balance_text.textContent = `₹ ${balance}`;
+if(inputDeposit.value > 0){
   const html = `
-        <div class="transaction_row">
-        <div class="transaction_type" style="color:green;">Deposit</div>
-          <div class="transaction_value">${Number(inputDeposit.value)}₹</div>
-        </div>
-      `;
-  trxn_box.insertAdjacentHTML("beforeend", html);
+  
+  <div class="transaction_row">
+  <div class="transaction_type" style="color:green;">Deposit</div>
+    <div class="transaction_value">${Number(inputDeposit.value)}₹</div>
+  </div>
+`;
+trxn_box.insertAdjacentHTML("afterbegin", html);
+}
   if (inputDeposit.value > 0) {
   }
-
   inputDeposit.value = " ";
 });
 
@@ -62,16 +64,16 @@ btnWithdraw.addEventListener("click", function (eve) {
   eve.preventDefault();
   wid();
   balance_text.textContent = `₹ ${balance}`;
-  if(inputWithdraw.value<=balance){
+  if (inputWithdraw.value <= balance && inputWithdraw.value > 0) {
     const html = `
+    
   <div class="transaction_row">
   <div class="transaction_type" style="color:red;">Withdrawal</div>
     <div class="transaction_value">-${Number(inputWithdraw.value)}₹</div>
   </div>
 `;
-trxn_box.insertAdjacentHTML("beforeend", html);
+    trxn_box.insertAdjacentHTML("afterbegin", html);
   }
-
   inputWithdraw.value = " ";
 });
 
