@@ -33,9 +33,7 @@ const wid = function () {
     balance = expenses.reduce((acc, mov) => acc + mov, 0);
     console.log(balance);
   }
-  if (inputWithdraw.value > balance) {
-    alert("Check your expenditures");
-  }
+  
   if (inputWithdraw.value < 0) {
     alert("Invalid Input");
   }
@@ -62,16 +60,19 @@ trxn_box.insertAdjacentHTML("afterbegin", html);
 
 btnWithdraw.addEventListener("click", function (eve) {
   eve.preventDefault();
+  if (inputWithdraw.value > balance) {
+    alert("Check your expenditures");
+  }
   wid();
   balance_text.textContent = `₹ ${balance}`;
   if (inputWithdraw.value <= balance && inputWithdraw.value > 0) {
     const html = `
-    
   <div class="transaction_row">
   <div class="transaction_type" style="color:red;">Withdrawal</div>
     <div class="transaction_value">-${Number(inputWithdraw.value)}₹</div>
   </div>
 `;
+console.log(inputWithdraw.value)
     trxn_box.insertAdjacentHTML("afterbegin", html);
   }
   inputWithdraw.value = " ";
