@@ -9,7 +9,7 @@
   - CSS custom properties
   - JavaScript
 ### Links:
-Link of the hosted webpage https://extraordinary-bienenstitch-06c355.netlify.app/
+Link of the hosted webpage https://expenses-managing.netlify.app/
 ### ScreenShot 
 ![](./assests/Screenshot.png)
 
